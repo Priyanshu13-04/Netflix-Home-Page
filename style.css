@@ -1,0 +1,356 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000;
+    overflow-x: hidden;
+}
+
+.main {
+    background-image: url(assets/netflix.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.main .box {
+    position: absolute;
+    inset: 0;
+    background: black;
+    opacity: 0.65;
+}
+
+nav {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+}
+
+nav img {
+    width: 150px;
+    position: relative;
+    z-index: 10;
+
+}
+
+nav button {
+    position: relative;
+    z-index: 10;
+    gap: 15px;
+}
+
+.left {
+    /* display: flex; */
+    align-items: center;
+    gap: 10px;
+    padding: 7px 25px;
+    background: rgba(22, 22, 22, .7);
+    border: 1px solid rgba(255, 255, 255, .35);
+    color: #fff;
+
+    border-radius: 4px;
+    cursor: pointer;
+
+    font-size: 16px;
+    font-weight: 500;
+
+}
+
+.right {
+
+    background: #e50914;
+    color: white;
+
+    border: none;
+    border-radius: 4px;
+
+    padding: 8px 12px;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: .2s;
+
+    margin: 10px;
+
+}
+
+.right:hover {
+    background: #c11119;
+}
+
+@media(max-width:768px) {
+
+    .left {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .right {
+        padding: 7px 14px;
+        font-size: 14px;
+    }
+}
+
+.content {
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    padding: 20px;
+}
+
+.big {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.big2 {
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding-bottom: 10px;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.small {
+    font-size: 22px;
+    font-weight: 600;
+    padding-bottom: 20px;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.smallest {
+    font-size: 15px;
+    font-weight: 500;
+    padding-bottom: 0px;
+    font-family: "Noto Sans", sans-serif;
+}
+
+/* ---------- NETFLIX CURVE ---------- */
+
+.curve {
+    position: relative;
+    width: 100%;
+    height: 110px;
+    background: #000;
+    margin-top: -55px;
+    /* Moves the line upward */
+    z-index: 20;
+    overflow: hidden;
+
+    border-top: 4px solid #ff0f7b;
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+}
+
+.curve::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: -90px;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 180px;
+
+    background: radial-gradient(ellipse at center,
+            rgba(27, 33, 99, 0.9) 0%,
+            rgba(15, 19, 62, 0.45) 40%,
+            rgba(35, 55, 255, .15) 65%,
+            transparent 85%);
+
+    filter: blur(35px);
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons input {
+    width: 370px;
+    height: 56px;
+    padding: 0 18px;
+    font-size: 16px;
+    color: white;
+    background: rgba(22, 22, 22, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 4px;
+    outline: none;
+    backdrop-filter: blur(2px);
+}
+
+.hero-buttons input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.hero-buttons input:focus {
+    border: 2px solid white;
+}
+
+.btn-red {
+    height: 56px;
+    padding: 0 28px;
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 24px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s ease;
+}
+
+.btn-red:hover {
+    background: #c11119;
+}
+
+.btn-red span {
+    font-size: 26px;
+    font-weight: 700;
+}
+
+@media (max-width:768px) {
+
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .hero-buttons input {
+        width: 90%;
+        max-width: 500px;
+    }
+
+    .btn-red {
+        width: fit-content;
+        font-size: 20px;
+        height: 52px;
+        padding: 0 22px;
+    }
+}
+
+/* ---------- TABLET ---------- */
+
+@media (max-width:992px) {
+
+    nav {
+        width: 95%;
+    }
+
+    nav img {
+        width: 130px;
+    }
+
+    .big,
+    .big2 {
+        font-size: 48px;
+    }
+
+    .small {
+        font-size: 20px;
+    }
+
+    .smallest {
+        font-size: 16px;
+    }
+
+    .curve {
+        margin-top: -45px;
+    }
+}
+
+/* ---------- MOBILE ---------- */
+
+@media (max-width:768px) {
+
+    nav {
+        width: 95%;
+        padding: 15px 0;
+    }
+
+    nav img {
+        width: 110px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .big,
+    .big2 {
+        font-size: 36px;
+    }
+
+    .small {
+        font-size: 18px;
+    }
+
+    .smallest {
+        font-size: 15px;
+    }
+
+    .curve {
+        height: 90px;
+        margin-top: -35px;
+    }
+}
+
+/* ---------- SMALL MOBILE ---------- */
+
+@media (max-width:480px) {
+
+    nav img {
+        width: 90px;
+    }
+
+    .big,
+    .big2 {
+        font-size: 28px;
+    }
+
+    .small {
+        font-size: 16px;
+    }
+
+    .smallest {
+        font-size: 14px;
+    }
+
+    nav button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    .curve {
+        height: 80px;
+        margin-top: -30px;
+    }
+}
